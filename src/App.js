@@ -1,32 +1,19 @@
 import React from 'react';
+import { Route, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-import Header from './components/Header';
-import AddedFeatures from './components/AddedFeatures';
-import AdditionalFeatures from './components/AdditionalFeatures';
-import Total from './components/Total';
-
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import reducer from "./reducers";
-
-const store = createStore(reducer);
-
+import CarInfo from "./components/CarInfo";
 
 const App = () => {
-
+  const cars = useSelector(state => state);
   return (
-    <Provider store = {store}>
-      <div className="boxes">
-        <div className="box">
-          <Header />
-          <AddedFeatures />
-        </div>
-        <div className="box">
-          <AdditionalFeatures />
-          <Total />
-        </div>
-      </div>
-    </Provider>
+    <>
+      <Route exact path = "/">
+        {cars.map((carState, index) => <Link to = {`/${index}`}>{carState.car.name}</Link>)}
+      </Route>
+
+      <Route path = "/:carIndex" component = {CarInfo} />
+    </>
   );
 };
 
