@@ -1,7 +1,8 @@
 import React from 'react';
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import Home from "./components/Home";
 import CarInfo from "./components/CarInfo";
 
 const App = () => {
@@ -9,7 +10,7 @@ const App = () => {
   return (
     <>
       <Route exact path = "/">
-        {cars.map((carState, index) => <Link to = {`/${index}`}>{carState.car.name}</Link>)}
+        <Home cars = {cars} />
       </Route>
 
       <Route path = "/:carIndex" component = {CarInfo} />
