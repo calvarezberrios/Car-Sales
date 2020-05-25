@@ -1,7 +1,7 @@
 import { ADD_FEATURE, REMOVE_FEATURE } from "../actions";
 
 export const initialState = [
-        {
+    {
         additionalPrice: 0,
         car: {
             price: 26395,
@@ -16,14 +16,20 @@ export const initialState = [
             { id: 3, name: 'Premium sound system', price: 500 },
             { id: 4, name: 'Rear spoiler', price: 250 }
         ]
-    }
+    },
 ];
+
+export const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0
+});
 
 export default function reducer(state = initialState, action) {
     switch(action.type) {
         case ADD_FEATURE:
-            return state.map((carState, index) => {
-                if(index === action.payload.index) {
+            return state.map((carState) => {
+                if(carState === state[action.payload.index]) {
                     return {
                         ...carState,
                         car: {
@@ -37,8 +43,8 @@ export default function reducer(state = initialState, action) {
                 return carState;
             });
         case REMOVE_FEATURE: 
-        return state.map((carState, index) => {
-            if(index === action.payload.index) {
+        return state.map((carState) => {
+            if(carState === state[action.payload.index]) {
                 return {
                     ...carState,
                     car: {

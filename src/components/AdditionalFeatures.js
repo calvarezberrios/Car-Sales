@@ -5,14 +5,15 @@ import { connect, useSelector } from "react-redux";
 import { addFeature } from "../actions";
 
 const AdditionalFeatures = props => {
-  const additionalFeatures = useSelector(state => state[props.carIndex].additionalFeatures)
+  const additionalFeatures = useSelector(state => state[props.carIndex].additionalFeatures);
+  
   return (
     <div className="content">
       <h4>Additional Features</h4>
       {additionalFeatures.length ? (
         <ol type="1">
           {additionalFeatures.map((item, index) => (
-            <AdditionalFeature key={item.id} feature={item} index = {index} addFeature = {props.addFeature} />
+            <AdditionalFeature key={item.id} feature={item} index = {props.carIndex} addFeature = {props.addFeature} />
           ))}
         </ol>
       ) : (
