@@ -35,9 +35,12 @@ html, body, #root {
       }
     }
 
-    a {
+
+
+    a, .navbar-menu {
       background: none;
       font-size: 20px;
+      box-shadow: none;
     }
   }
 
