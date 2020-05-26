@@ -6,9 +6,9 @@ const NavBar = () => {
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation" >
             <div className="navbar-brand">
-                <Link className="navbar-item" to="/">Cars4Sale</Link>
+                <Link className="navbar-item logo" to="/">Cars4<span>Sale</span></Link>
 
-                <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <a href = "/" onClick = {e => e.preventDefault()} role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>

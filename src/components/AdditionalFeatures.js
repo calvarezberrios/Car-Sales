@@ -1,8 +1,7 @@
 import React from 'react';
 import AdditionalFeature from './AdditionalFeature';
 
-import { connect, useSelector } from "react-redux";
-import { addFeature } from "../actions";
+import { useSelector } from "react-redux";
 
 const AdditionalFeatures = props => {
   const additionalFeatures = useSelector(state => state[props.carIndex].additionalFeatures);

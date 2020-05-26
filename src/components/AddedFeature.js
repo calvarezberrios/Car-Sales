@@ -1,5 +1,5 @@
 import React, { useCallback} from 'react';
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const AddedFeature = props => {
   const dispatch = useDispatch();

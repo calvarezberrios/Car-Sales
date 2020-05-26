@@ -14,10 +14,11 @@ const CarCard = ({ carState, index }) => {
                     <div className="media">
                         <div className="media-left">
                             <p className="title is-4">{carState.car.name}</p>
-                            <p className="subtitle is-6">{carState.car.name.split(" ")[2]}</p>
+                            <p className="subtitle is-6">{carState.car.type} | {carState.car.miles} miles</p>
+                            <p className="subtitle is-4">{!isNaN(carState.car.price) ? `${formatter.format(carState.car.price + carState.additionalPrice)}` : carState.car.price}</p>
                         </div>
                         <div className="media-content">
-                            <p className="subtitle is-4">{`${formatter.format(carState.car.price + carState.additionalPrice)}`}</p>
+                            
                         </div>
                     </div>
 

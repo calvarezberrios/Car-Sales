@@ -6,6 +6,7 @@ html, body, #root {
   height: 100%;
   width: 100%;
   background: #f7f5f5;
+  scroll-behavior: smooth;
 }
 
 .appContainer {
@@ -16,6 +17,28 @@ html, body, #root {
   .navbar {
     border-bottom: 1px solid #ccc;
     box-shadow: 5px 0 10px 3px #ccc;
+    background: lightskyblue;
+    padding: 15px;
+
+    .logo {
+      display: block;
+      font-family: Oldtown, fantasy;
+      font-size: 35px;
+      margin-right: 50px;
+      font-weight: 900;
+      color: #da4949;
+      background: yellow !important;
+      border-radius: 50%;
+
+      span {
+        color: black;
+      }
+    }
+
+    a {
+      background: none;
+      font-size: 20px;
+    }
   }
 
   .carsPageContent {
@@ -38,6 +61,10 @@ html, body, #root {
         margin: 15px;
         transition: transform .3s;
         border-radius: 10px;
+
+        p {
+          width: 335px;
+        }
 
         img {
           border-top-left-radius: 10px;
@@ -79,6 +106,21 @@ html, body, #root {
     img {
       width: 100%;
       height: 600px;
+    }
+  }
+
+  .tabs {
+    margin: 0 !important;
+  }
+
+  #features {
+    
+
+    .content {
+      width: 60%;
+      min-height: 300px;
+      margin: 0 auto;
+
     }
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Total = props => {
   const carState = useSelector(state => state[props.carIndex]) 

@@ -1,9 +1,8 @@
 import React from 'react';
-import { connect, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import AddedFeature from './AddedFeature';
 
-import { removeFeature } from "../actions";
 
 const AddedFeatures = props => {
   const features = useSelector(state => state[props.carIndex].car.features)
