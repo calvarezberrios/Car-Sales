@@ -1,13 +1,170 @@
+* {
+  box-sizing: border-box !important;
+}
+
 html, body, #root {
   height: 100%;
+  width: 100%;
+  background: #f7f5f5;
+  scroll-behavior: smooth;
 }
-body {
-  background: #333;
+
+.appContainer {
   margin: 0;
-  display: grid;
-  padding: 3em;
-  place-items: center;
+  padding: 0;
+  width: 100% !important;
+
+  .navbar {
+    border-bottom: 1px solid #ccc;
+    box-shadow: 5px 0 10px 3px #ccc;
+    background: lightskyblue;
+    padding: 15px;
+
+    .logo {
+      display: block;
+      font-family: Oldtown, fantasy;
+      font-size: 35px;
+      margin-right: 50px;
+      font-weight: 900;
+      color: #da4949;
+      background: yellow !important;
+      border-radius: 50%;
+
+      span {
+        color: black;
+      }
+    }
+
+
+
+    a, .navbar-menu {
+      background: none;
+      font-size: 20px;
+      box-shadow: none;
+    }
+  }
+
+  .carsPageContent {
+    
+    .cars-top-container {
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+      background: white;
+    }
+
+    .cars-list-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .card {
+        width: 385px;
+        margin: 15px;
+        transition: transform .3s;
+        border-radius: 10px;
+
+        p {
+          width: 335px;
+        }
+
+        img {
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+    }
+  }
+
+  .car-landing-page {
+    background: white;
+
+    .carHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 35px;
+
+      .rightSide {
+        display: flex;
+        align-items: center;
+
+        h2 {
+          margin: 0;
+        }
+
+        .button {
+          margin: 0;
+          margin-left: 55px;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 600px;
+    }
+  }
+
+  .tabs {
+    margin: 0 !important;
+  }
+
+  #features {
+    
+
+    .content {
+      width: 60%;
+      min-height: 300px;
+      margin: 0 auto;
+
+    }
+  }
 }
+
+#hero {
+  width: 100%;
+  height: 400px;
+  background-image: url("./assets/images/home-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .heroContent {
+    width: 60%;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 100px 0;
+    font-family: "Arial Black";
+
+    .title {
+      color: white;
+      font-size: 55px;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    .subtitle {
+      color: white;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    .button {
+      &:hover {
+        color: #555;
+      }
+    }
+
+  }
+
+}
+
+
 .boxes {
   display: grid;
   grid-gap: 2em;
@@ -17,7 +174,8 @@ body {
 .box {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  height: 100%;
+
   h1 {
     font-size: 20px;
     margin: 0 0 1rem 0;
