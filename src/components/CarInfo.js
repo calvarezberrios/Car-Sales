@@ -39,7 +39,7 @@ const CarInfo = ({match}) => {
         //e.preventDefault();
         setTabSelected(e.target.textContent.toLowerCase());
         document.querySelector("li.is-active").classList.remove("is-active");
-        e.target.parentElement.classList.add("is-active");
+        e.target.classList.add("is-active");
     }
 
     return (
@@ -61,8 +61,8 @@ const CarInfo = ({match}) => {
 
             <div className = "tabs is-centered">
                 <ul>
-                    <li className = "is-active"><a href = "#features" onClick = {changeTab}>Features</a></li>
-                    <li><a href = "#features" onClick = {changeTab}>Feature Store</a></li>
+                    <li className = "button is-white is-active" onClick = {changeTab}>Features</li>
+                    <li className = "button is-white" onClick = {changeTab}>Feature Store</li>
                 </ul>
             </div>
 
