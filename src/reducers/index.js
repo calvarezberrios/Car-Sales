@@ -1,6 +1,6 @@
 import { ADD_FEATURE, REMOVE_FEATURE } from "../actions";
 
-export const initialState = [
+export let initialState = [
     { 
         "additionalPrice": 0, 
         "car": { 
@@ -197,8 +197,10 @@ export default function reducer(state = initialState, action) {
                 return carState;
             });
         case "ADD_CARS_DATA":
+            initialState = [...initialState, action.payload];
             return [...state, action.payload];
         case "SEARCH_FILTER":
+            
             return initialState.filter(carState => carState.car.name.toLowerCase().includes(action.payload.toLowerCase()) || carState.car.price.toString().includes(action.payload) || carState.car.miles.toString().includes(action.payload) || carState.car.type.toLowerCase().includes(action.payload.toLowerCase()));
         default:
             return state;
